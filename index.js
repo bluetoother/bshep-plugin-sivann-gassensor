@@ -8,8 +8,8 @@ module.exports = {
             { name: 'gasMeasPeriod', uuid: '0xbb51', params: ['period'], types: ['uint8'] }
         ]
      },
-     analysis: function (periph, basicInfo) {
-        var checkFlag = false;
+     examine: function (periph, basicInfo) {
+        var isMine = false;
 
         if (basicInfo.manufacturer === 'sivann' &&
             basicInfo.devName === 'Gas Sht Sensor' &&
@@ -17,8 +17,8 @@ module.exports = {
             basicInfo.version.fw === 'v1.0.0' && 
             basicInfo.version.hw === 'v1.0.0' &&
             basicInfo.version.sw === 'v1.0.0')
-            checkFlag = true;
+            isMine = true;
 
-        return checkFlag;
+        return isMine;
     }
 };
