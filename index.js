@@ -10,18 +10,16 @@ module.exports = {
             { name: 'aInConfig', uuid: '0xbb11', params: ['config'], types: ['boolean'] },
             { name: 'aInMeasPeriod', uuid: '0xbb12', params: ['period'], types: ['uint8'] },
             { name: 'gasConfig', uuid: '0xbb51', params: ['config'], types: ['boolean'] },
-            { name: 'gasMeasPeriod', uuid: '0xbb52', params: ['period'], types: ['uint8'] }
+            { name: 'gasMeasPeriod', uuid: '0xbb52', params: ['period'], types: ['uint8'] },
+            { name: 'gasOption', uuid: '0xbb53', params: ['option'], types: ['uint8'] },
+            { name: 'gasThreshold', uuid: '0xbb54', params: ['threshold'], types: ['uint16'] }
         ]
      },
      examine: function (periph, basicInfo) {
         var isMine = false;
 
         if (basicInfo.manufacturer === 'sivann' &&
-            basicInfo.devName === 'Gas Alarm Sensor' &&
-            basicInfo.model === 'GasAlarmSensor' &&
-            basicInfo.fwRev === 'v1.0.0' && 
-            basicInfo.hwRev === 'v1.0.0' &&
-            basicInfo.swRev === 'v1.0.0')
+            basicInfo.devName === 'Gas Alarm Sensor')
             isMine = true;
 
         return isMine;
